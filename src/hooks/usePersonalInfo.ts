@@ -27,6 +27,7 @@ export function usePersonalInfo() {
         const { data, error } = await supabase
           .from('personal_info')
           .select('*')
+          .limit(1)
           .single();
 
         if (error) throw error;
